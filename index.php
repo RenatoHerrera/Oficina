@@ -8,7 +8,7 @@ require 'config.php';
     <tr>
         <th>ID</th>
         <th>Nome</th>
-        <th>CPF</th>
+        <th>Cpf</th>
         <th>E-mail</th>
         <th>Telefone</th>
         <th>Ações</th>

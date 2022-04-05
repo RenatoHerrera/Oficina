@@ -5,13 +5,13 @@
         Nome: <input type="text" name="nome"/>        
     </label>
     <label>
-        CPF: <input type="int" name="CPF"/>
+        Cpf: <input type="text" name="CPF"/>
     </label>
     <label>
-        E-mail: <input type="email" name="E-Mail"/>
+        E-mail: <input type="email" name="email"/>
     </label>
     <label>
-        Telefone: <input type="int" name="Telefone"/>
+        Telefone: <input type="text" name="telefone"/>
     </label>    
     <input type="submit" value="Salvar"/>     
 </form>
