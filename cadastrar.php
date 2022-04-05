@@ -12,6 +12,6 @@
     </label>
     <label>
         Telefone: <input type="text" name="telefone"/>
-    </label>    
+    </label>
     <input type="submit" value="Salvar"/>     
 </form>
