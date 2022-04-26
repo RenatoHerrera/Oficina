@@ -7,14 +7,22 @@ $email = filter_input(INPUT_POST, 'email');
 $telefone = filter_input(INPUT_POST, 'telefone');
 //echo "$nome $Cpf $email $telefone";
 
-$sql = $pdo->prepare("INSERT INTO usuarios (nome, Cpf, email, Telefone) VALUES (:nome, :Cpf, :email, :telefone)");
-$sql->bindValue(':nome', $nome);
-$sql->bindValue(':Cpf', $Cpf);
-$sql->bindValue(':email', $email);
-$sql->bindValue(':telefone', $telefone);
+
+if($nome && $email){
+
+    $sql = $pdo->prepare("INSERT INTO usuarios (nome, Cpf, email, Telefone) VALUES (:nome, :Cpf, :email, :telefone)");
+    $sql->bindValue(':nome', $nome);
+    $sql->bindValue(':Cpf', $Cpf);
+    $sql->bindValue(':email', $email);
+    $sql->bindValue(':telefone', $telefone);
+    $sql->execute();
+    
+    header("Location: index.php");
+    exit;
+}else{
+    header("Location: cadastrar.php");
+    exit;
+
+}
 
 //if($sql->execute()){}else{print_r($sql->errorInfo());}
-
-$sql->execute();
-
-header("Location: index.php");
