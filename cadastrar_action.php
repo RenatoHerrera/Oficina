@@ -10,15 +10,25 @@ $telefone = filter_input(INPUT_POST, 'telefone');
 
 if($nome && $email){
 
-    $sql = $pdo->prepare("INSERT INTO usuarios (nome, Cpf, email, Telefone) VALUES (:nome, :Cpf, :email, :telefone)");
-    $sql->bindValue(':nome', $nome);
-    $sql->bindValue(':Cpf', $Cpf);
+    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
     $sql->bindValue(':email', $email);
-    $sql->bindValue(':telefone', $telefone);
     $sql->execute();
+
+    if($sql->rowCount() === 0){
+
+        $sql = $pdo->prepare("INSERT INTO usuarios (nome, Cpf, email, Telefone) VALUES (:nome, :Cpf, :email, :telefone)");
+        $sql->bindValue(':nome', $nome);
+        $sql->bindValue(':Cpf', $Cpf);
+        $sql->bindValue(':email', $email);
+        $sql->bindValue(':telefone', $telefone);
+        $sql->execute();
+        
+        header("Location: index.php");
+        exit;
+    }else{
+        header("Location: cadastrar.php");
+    }
     
-    header("Location: index.php");
-    exit;
 }else{
     header("Location: cadastrar.php");
     exit;

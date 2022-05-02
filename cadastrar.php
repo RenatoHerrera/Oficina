@@ -1,4 +1,4 @@
-<h1>Cadastrar Usuario</h1>
+<h1>Cadastrar Cliente</h1>
 <pre>
 <form method="POST" action="cadastrar_action.php">   
     <label>

@@ -2,7 +2,7 @@
 require 'config.php';
 ?>
 
-<h1>Listagem de usuarios</h1>
+<h1>Listagem de Clientes</h1>
 
 <table border="1">
     <tr>
@@ -15,4 +15,4 @@ require 'config.php';
     </tr>
 </table>
 
-<a href="cadastrar.php">Cadastrar Usuario</a>
+<a href="cadastrar.php">Cadastrar Cliente</a>
